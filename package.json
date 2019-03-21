@@ -1,0 +1,24 @@
+{
+    "name": "project3-findbyhomeandsave",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "concurrently \"nodemon server.js\" \"cd ./client  && npm start \" ",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lsmith190/Project3-findByHomeAndSave.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/lsmith190/Project3-findByHomeAndSave/issues"
+    },
+    "homepage": "https://github.com/lsmith190/Project3-findByHomeAndSave#readme",
+    "dependencies": {
+        "concurrently": "^4.1.0"
+    }
+}
