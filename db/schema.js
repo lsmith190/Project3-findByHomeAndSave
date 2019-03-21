@@ -8,15 +8,15 @@ const HomesSchema = new Schema({
     },
     numberOfBeds: {
         type: Number,
-        default: 'New Beds'
+        default: null
     },
     price: {
         type: Number,
-        default: 'New Price'
+        default: null
     },
     rating: {
         type: Number,
-        default: 'New Rating'
+        default: null
     },
     image: {
         type: String,

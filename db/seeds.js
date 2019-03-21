@@ -25,6 +25,7 @@ const lindsey = new User({
     ideas: [mercerSt, hillSt]
 })
 
+
 User.remove({})
     .then(() => lindsey.save())
     .then(() => console.log('Successful Save'))
