@@ -23,6 +23,7 @@
     },
     "homepage": "https://github.com/lsmith190/Project3-findByHomeAndSave#readme",
     "dependencies": {
+        "body-parser": "^1.18.3",
         "concurrently": "^4.1.0",
         "dotenv": "^7.0.0",
         "express": "^4.16.4",

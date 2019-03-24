@@ -7,6 +7,13 @@ router.get('/', (req, res) => {
             res.json(users)
         })
         .catch((err) => console.log(err))
-})
+});
+
+//Show
+router.get("/:id", (req, res) => {
+    User.findById(req.params.id).then((user) => {
+        res.json(user);
+    });
+});
 
 module.exports = router;
