@@ -11,7 +11,7 @@ app.use(express.json())
 app.use('/api/user', userController)
 app.use('/api/allhomes', allHomesController)
 
-app.use('/api/user/:id/homes', homesController)
+// app.use('/api/user/:id/homes', homesController)
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/client/build/'));

@@ -1,18 +1,38 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 class HomePage extends Component {
     state = {
-        user: ''
+        user: []
     }
 
     componentDidMount() {
-        this.setState({ user: 'Lindsey' })
+        this.users()
+    }
+
+    users = () => {
+        axios.get('/api/user').then(res => {
+            this.setState({user: res.data})
+        })
     }
     
     render() {
+        const user = this.state.user.map((user) => {
+            return user._id
+        })
+        console.log(user)
         return (
             <div>
-                <h1>HELLO {this.state.user}</h1>
+                {/* {
+                    this.state.user.map((user) => {
+                        return(
+                            <Link to={'/homes'}>Enter Site</Link>
+                            
+                        )
+                    })
+                } */}
+                <Link to={`user/${user}/homes`} key={user._id}>{user}</Link>
             </div>
         )
     }
