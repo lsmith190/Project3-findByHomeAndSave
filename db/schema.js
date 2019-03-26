@@ -14,9 +14,9 @@ const HomesSchema = new Schema({
         type: Number,
         default: null
     },
-    rating: {
-        type: Number,
-        default: null
+    comments: {
+        type: String,
+        default: 'Comments'
     },
     image: {
         type: String,

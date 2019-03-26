@@ -16,7 +16,7 @@ const mercerSt = new Homes({
     address: '780 Mercer St. Atlanta, GA 30312',
     numberOfBeds: 4,
     price: 725000,
-    rating: 5,
+    comments: 'Modern floorplan and structure of home',
     image: 'https://i.imgur.com/WXrSSFF.jpg?2'
 })
 lindsey.homes.push(mercerSt)
@@ -25,7 +25,7 @@ const hillSt = new Homes({
     address: '1050 Hill St. Atlanta, GA 30315',
     numberOfBeds: 3,
     price: 539000,
-    rating: 4,
+    comments: 'Has front porch and fenced in backyard',
     image: 'https://i.imgur.com/EXhfYP3.jpg?1'
 })
 lindsey.homes.push(hillSt)
