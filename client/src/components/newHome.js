@@ -36,12 +36,15 @@ class NewHome extends Component {
     }
 
     render() {
+        // const id = this.props.match.params.userId
+        // if (this.state.redirect) {
+        //     return <Redirect to={`/user/${id}/homes/new`}/>
+        // } else {
         return (
             <form onSubmit={this.addNewHome}>
             <div>
                     <label htmlFor="address">Address: </label>
-                    <input 
-                    value={this.state.newHome.address}
+                    <input
                     type="text" 
                     name="address" 
                     onChange={this._handleChange}
@@ -50,7 +53,6 @@ class NewHome extends Component {
             <div>
                     <label htmlFor="numberOfBeds">How many bedrooms? </label>
                     <input
-                    value={this.state.newHome.numberOfBeds}
                     type="number"
                     name="numberOfBeds"
                     onChange={this._handleChange}
@@ -59,7 +61,6 @@ class NewHome extends Component {
             <div>
                     <label htmlFor="price">Price: </label>
                     <input
-                    value={this.state.newHome.price}
                     type="number"
                     name="price"
                     onChange={this._handleChange}
@@ -68,7 +69,6 @@ class NewHome extends Component {
             <div>
                     <label htmlFor="comments">Comments on this home: </label>
                     <input
-                    value={this.state.newHome.comments}
                     type="text"
                     name="comments"
                     onChange={this._handleChange}
@@ -77,7 +77,6 @@ class NewHome extends Component {
             <div>
                     <label htmlFor="image">Image Link: </label>
                     <input
-                    value={this.state.newHome.image}
                     type="text"
                     name="image"
                     onChange={this._handleChange}
@@ -85,8 +84,8 @@ class NewHome extends Component {
             </div>
             <input type="submit" value="Submit" />
             </form>
-        );
+        )
     }
-};
+}
 
-export default NewHome;
+export default NewHome

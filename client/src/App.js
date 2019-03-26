@@ -4,7 +4,7 @@ import './App.css';
 import HomePage from './components/HomePage.js'
 import AllHomes from './components/AllHomes.js'
 import NewHome from './components/NewHome.js'
-// import SingleHome from './components/SingleHome.js'
+import EditHome from './components/EditHome.js'
 // import LovedHomes from './components/LovedHomes.js'
 
 class App extends Component {
@@ -15,6 +15,7 @@ class App extends Component {
           <Route exact path="/" component={HomePage}/>
           <Route exact path="/user/:userId/homes" component={AllHomes} />
           <Route exact path="/user/:userId/homes/new" component={NewHome} />
+          <Route exact path="/user/:userId/homes/edit" component={EditHome} />
         </Switch>
       </Router>
     );
