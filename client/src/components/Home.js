@@ -9,6 +9,7 @@ class Home extends Component {
                 <div><a class="btn btn-light" href="/">+ Delete Home</a></div>
                 <div><img src={this.props.home.image} height="200" width="200" alt="home"/></div>
                 <div>{this.props.home.address}</div>
+                <div>Listing price: {this.props.home.price}</div>
                 <div>{this.props.home.numberOfBeds} Beds</div>
                 <div>Your comments about this home: {this.props.home.comments}</div>
                 </h6>
