@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
+
 class HomePage extends Component {
     state = {
         user: []
@@ -22,7 +23,6 @@ class HomePage extends Component {
             return user._id
         })
         return (
-            
             <div>
                 <h1>Login</h1>
                 <Link to={`user/${user}/homes`} key={user._id}>{user}</Link>

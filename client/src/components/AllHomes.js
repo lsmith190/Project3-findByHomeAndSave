@@ -32,8 +32,6 @@ class AllHomes extends Component {
                             home={home}
                         />
                     )
-
-
                 })}</h1>
 
 

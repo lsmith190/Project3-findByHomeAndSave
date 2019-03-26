@@ -37,7 +37,7 @@ class NewHome extends Component {
 
     render() {
         return (
-            <form>
+            <form onSubmit={this.addNewHome}>
             <div>
                     <label htmlFor="address">Address: </label>
                     <input 
