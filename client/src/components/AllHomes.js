@@ -37,7 +37,7 @@ class AllHomes extends Component {
                 })}</h1>
 
 
-                <h2><a class="btn btn-light" href={`/api/user/${id}/homes/new`}>+ Add Home</a></h2>
+                <h2><a class="btn btn-light" href={`/user/${id}/homes/new`}>+ Add Home</a></h2>
             
             </div>
         );
