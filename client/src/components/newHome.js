@@ -24,23 +24,19 @@ class NewHome extends Component {
     
      addNewHome = (evt) => {
         evt.preventDefault();
+        const payload = this.state
         const id = this.props.match.params.userId
-        this.props.addNewHome(this.state.newHome)
         axios
-            .post(`/api/user/${id}/homes/new`, {
-                address: this.state.newHome.address,
-                numberOfBeds: this.state.newHome.numberOfBeds,
-                price: this.state.newHome.price,
-                comments: this.state.newShow.comments,
-                image: this.state.newShow.image
-            })
+            .post(`/api/user/${id}/homes/new`, payload)
+            .then((res => {
+                this.setState({"redirect": true})
+            }))
+            .catch(err => console.log(err))
             
     }
 
-
     render() {
         return (
-        //     <div>Hello</div>
             <form>
             <div>
                     <label htmlFor="address">Address: </label>
@@ -87,6 +83,7 @@ class NewHome extends Component {
                     onChange={this._handleChange}
                     />
             </div>
+            <input type="submit" value="Submit" />
             </form>
         );
     }
