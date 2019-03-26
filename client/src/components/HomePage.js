@@ -22,7 +22,9 @@ class HomePage extends Component {
             return user._id
         })
         return (
+            
             <div>
+                <h1>Login</h1>
                 <Link to={`user/${user}/homes`} key={user._id}>{user}</Link>
             </div>
         )

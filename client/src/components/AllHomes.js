@@ -22,6 +22,7 @@ class AllHomes extends Component {
       }
 
     render() {
+        const id = this.props.match.params.userId
         return (
             <div>
                 <h1>{this.state.allhomes.map(home => {
@@ -31,8 +32,12 @@ class AllHomes extends Component {
                             home={home}
                         />
                     )
+
+
                 })}</h1>
-                <a class="btn btn-light" href="/">+ Add Home</a>
+
+
+                <h2><a class="btn btn-light" href={`/api/user/${id}/homes/new`}>+ Add Home</a></h2>
             
             </div>
         );

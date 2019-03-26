@@ -5,10 +5,10 @@ class Home extends Component {
         return (
             <div>
                 <h6>
-                <a class="btn btn-light" href="/">+ Edit Home</a>
-                <a class="btn btn-light" href="/">+ Delete Home</a>
-                <img src={this.props.home.image} alt="home"/>
-                {this.props.home.address}
+                <div><a class="btn btn-light" href="/">+ Edit Home</a></div>
+                <div><a class="btn btn-light" href="/">+ Delete Home</a></div>
+                <div><img src={this.props.home.image} height="200" width="200" alt="home"/></div>
+                <div>{this.props.home.address}</div>
                 </h6>
             </div>
         );
