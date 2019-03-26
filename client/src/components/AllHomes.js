@@ -13,22 +13,18 @@ class AllHomes extends Component {
 
     getAllHomes = () => {
         const id = this.props.match.params.userId
-        console.log(id)
         axios.get(`/api/user/${id}/homes`)
         .then(res => {
         this.setState({
-          id: res.data._id,
-          user: res.data
+          allhomes: res.data
         });
         })
       }
-
 
     render() {
         return (
             <div>
                 <h1>{this.state.allhomes.map(home => {
-                    console.log(home)
                     return(
                         <Home 
                             key={home._id}
@@ -36,7 +32,8 @@ class AllHomes extends Component {
                         />
                     )
                 })}</h1>
-                hello
+                <a class="btn btn-light" href="/">+ Add Home</a>
+            
             </div>
         );
     }

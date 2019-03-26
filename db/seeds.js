@@ -17,7 +17,7 @@ const mercerSt = new Homes({
     numberOfBeds: 4,
     price: 725000,
     rating: 5,
-    image: '../img/MercerSt.jpg'
+    image: 'https://imgur.com/WXrSSFF'
 })
 lindsey.homes.push(mercerSt)
 
@@ -26,7 +26,7 @@ const hillSt = new Homes({
     numberOfBeds: 3,
     price: 539000,
     rating: 4,
-    image: '../img/hillSt.jpg'
+    image: 'https://imgur.com/EXhfYP3'
 })
 lindsey.homes.push(hillSt)
 

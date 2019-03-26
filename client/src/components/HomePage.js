@@ -21,7 +21,6 @@ class HomePage extends Component {
         const user = this.state.user.map((user) => {
             return user._id
         })
-        console.log(user)
         return (
             <div>
                 {/* {
