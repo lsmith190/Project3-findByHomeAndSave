@@ -10,9 +10,9 @@ findByHomeAndSave is a MERN stack application that allows users to keep track of
 </ul>
 
 ## Wireframes
-<a href="https://imgur.com/eC8mr52"><img src="https://i.imgur.com/eC8mr52.png?1" title="source: imgur.com" /></a>
-<a href="https://imgur.com/9lyVSdr"><img src="https://i.imgur.com/9lyVSdr.png?1" title="source: imgur.com" /></a>
-<a href="https://imgur.com/Z2XC7G3"><img src="https://i.imgur.com/Z2XC7G3.png?1" title="source: imgur.com" /></a>
+<a href="https://imgur.com/eC8mr52"><img src="https://i.imgur.com/eC8mr52.png?1" title="source: imgur.com" /></a><br>
+<a href="https://imgur.com/9lyVSdr"><img src="https://i.imgur.com/9lyVSdr.png?1" title="source: imgur.com" /></a><br>
+<a href="https://imgur.com/Z2XC7G3"><img src="https://i.imgur.com/Z2XC7G3.png?1" title="source: imgur.com" /></a><br>
 
 ## ERD
 
