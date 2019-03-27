@@ -13,6 +13,24 @@ class editHome extends Component {
         redirect: false
     }
 
+    componentDidMount = () => {
+        this.getAllHomes()
+    }
+
+    getAllHomes = () => {
+        const id = this.props.match.params.userId
+        axios.get(`/api/user/${id}/homes/${this.props.match.params.homeId}`)
+        .then(res => {
+        this.setState({
+          editHome: {address: res.data.address, 
+                     numberOfBeds: res.data.numberOfBeds, 
+                     price: res.data.price, 
+                     comments: res.data.comments, 
+                     image: res.data.image}
+        });
+        })
+      }
+
     _handleChange = (event) => {
         const attributeName = event.target.name;
         const attributeValue = event.target.value;

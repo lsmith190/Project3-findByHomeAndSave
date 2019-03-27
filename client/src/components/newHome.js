@@ -24,7 +24,8 @@ class NewHome extends Component {
     
      addNewHome = (evt) => {
         evt.preventDefault();
-        const payload = this.state
+        const payload = this.state.newHome
+        console.log(payload)
         const id = this.props.match.params.userId
         axios
             .post(`/api/user/${id}/homes/new`, payload)

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 
 class Home extends Component {
     render(props) {
@@ -7,7 +8,8 @@ class Home extends Component {
         return (
             <div>
                 <h6>
-                <div><a className="btn btn-light" href={`/user/${id}/homes/edit`}>+ Edit Home</a></div>
+                {/* <div><a className="btn btn-light" href={`/user/${id}/homes/edit`}>+ Edit Home</a></div> */}
+                <Link to={`/user/${id}/homes/${this.props.home._id}/edit`} address={this.props.home.address}>+ Edit Home</Link>
                 <div><a className="btn btn-light" href="/">+ Delete Home</a></div>
                 <div><img src={this.props.home.image} height="200" width="200" alt="home"/></div>
                 <div>{this.props.home.address}</div>

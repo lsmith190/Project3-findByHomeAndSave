@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
         .catch((err) => console.log(err))
 })
 
-router.post("/", (req, res) => {
+router.post("/new", (req, res) => {
     const userId = req.params.id;
     const newHomeInfo = req.body;
 
