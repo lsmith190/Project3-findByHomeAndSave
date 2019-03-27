@@ -5,7 +5,6 @@ import HomePage from './components/HomePage.js'
 import AllHomes from './components/AllHomes.js'
 import NewHome from './components/NewHome.js'
 import EditHome from './components/EditHome.js'
-// import LovedHomes from './components/LovedHomes.js'
 
 class App extends Component {
   render() {

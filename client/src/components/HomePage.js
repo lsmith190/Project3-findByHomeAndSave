@@ -26,7 +26,29 @@ class HomePage extends Component {
             <div>
                 <h1>Login</h1>
                 <Link to={`user/${user}/homes`} key={user._id}>{user}</Link>
+
+                <form>
+                    <div>
+                    <label htmlFor="name">Name: </label>
+                        <input
+                            type="text"
+                            name="name"
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                    <div>
+                    <label htmlFor="password">Password: </label>
+                        <input
+                            type="text"
+                            name="password"
+                            onChange={this.handleChange}
+                        />
+                    </div>
+                    <Link to={`user/${user}/homes`}>Login</Link>
+                </form>
+
             </div>
+
         )
     }
 }

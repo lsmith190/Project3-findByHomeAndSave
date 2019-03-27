@@ -9,11 +9,23 @@ router.get('/', (req, res) => {
         .catch((err) => console.log(err))
 });
 
+// router.post('/', (req, res) => {
+//     const newUser = req.body;
+
+//     User.create(newUser).then((user) => {
+//         res.json(user)
+//     })
+// }).catch((error) => {
+//     console.log(error);
+// })
+
+
 //Show
 router.get("/:id", (req, res) => {
     User.findById(req.params.id).then((user) => {
         res.json(user);
     });
 });
+
 
 module.exports = router;

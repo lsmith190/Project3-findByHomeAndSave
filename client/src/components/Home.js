@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios'
+// import styled from 'styled-components'
 
 class Home extends Component {
     state = {
@@ -11,15 +12,15 @@ class Home extends Component {
     //     this.getHomes()
     // }
 
-    componentDidUpdate(prevProps, prevState) {
-        console.log(prevProps.home)
-        console.log(this.props.home)
-        if (prevState.home !== this.props.home) 
-        // {
-        //     this.getHomes()
-        // }
-        console.log('something')
-}
+//     componentDidUpdate(prevProps, prevState) {
+//         console.log(prevProps.home)
+//         console.log(this.props.home)
+//         if (prevState.home !== this.props.home) 
+//         // {
+//         //     this.getHomes()
+//         // }
+//         console.log('something')
+// }
 
     getHomes = () => {
         const id = this.props.userId;
@@ -34,21 +35,25 @@ class Home extends Component {
         const homeId = this.props.home._id
         axios.delete(`/api/user/${id}/homes/${homeId}`)
         .then(res => {
+            const copiedHome = [...this.state.home]
+            console.log(copiedHome)
+            const filteredHomes = copiedHome.filter(home => home._id !== res.data._id)
+            console.log(filteredHomes)
+            this.setState({ home: filteredHomes, redirectToHome: true })
         // this.setState({
         //   home: res.data
         // });
-        console.log(res)
         })
       }
 
     render(props) {
         const id = this.props.userId
-        console.log(id)
         return (
+
             <div>
                 <h6>
-                <Link to={`/user/${id}/homes/${this.props.home._id}/edit`}>+ Edit Home</Link>
-                <Link to={`/user/${id}/homes/`} onClick={this.deleteHome}>+ Delete Home</Link>
+                <div><Link to={`/user/${id}/homes/${this.props.home._id}/edit`}>+ Edit Home</Link></div>
+                <div><Link to={`/user/${id}/homes`} onClick={this.deleteHome}>+ Delete Home</Link></div>
                 <div><img src={this.props.home.image} height="200" width="200" alt="home"/></div>
                 <div>{this.props.home.address}</div>
                 <div>Listing price: {this.props.home.price}</div>
