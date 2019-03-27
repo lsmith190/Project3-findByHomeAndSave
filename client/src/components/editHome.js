@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { Redirect} from "react-router-dom";
 
 class editHome extends Component {
     state = {
@@ -41,21 +42,28 @@ class editHome extends Component {
 
     editHome = (evt) => {
     evt.preventDefault();
-    const payload = this.state
+    const payload = this.state.editHome
+    console.log(payload)
     const id = this.props.match.params.userId
-    this.props.editHome(this.state.editHome)
+    const homeId = this.props.match.params.homeId
     axios
-        .post(`/api/user/${id}/homes/edit`, payload)
+        .put(`/api/user/${id}/homes/${homeId}/edit`, payload)
         .then((res => {
             this.setState({"redirect": true})
         }))
         .catch(err => console.log(err))
        
 }
+//controller: /api/user/:id/homes/
+//:homeId/edit
 
     render() {
+        const id = this.props.match.params.userId
+        if (this.state.redirect) {
+            return <Redirect to={`/user/${id}/homes`}/>
+        } else {
         return (
-            <form>
+            <form onSubmit={this.editHome}>
             <div>
                     <label htmlFor="address">Address: </label>
                     <input 
@@ -105,6 +113,7 @@ class editHome extends Component {
             </form>
         );
     }
+}
 }
 
 export default editHome;

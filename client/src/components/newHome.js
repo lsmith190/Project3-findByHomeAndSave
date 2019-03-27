@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import { Redirect, Link } from "react-router-dom";
+import { Redirect} from "react-router-dom";
 
 class NewHome extends Component {
     state = {
@@ -25,7 +25,6 @@ class NewHome extends Component {
      addNewHome = (evt) => {
         evt.preventDefault();
         const payload = this.state.newHome
-        console.log(payload)
         const id = this.props.match.params.userId
         axios
             .post(`/api/user/${id}/homes/new`, payload)
@@ -37,10 +36,10 @@ class NewHome extends Component {
     }
 
     render() {
-        // const id = this.props.match.params.userId
-        // if (this.state.redirect) {
-        //     return <Redirect to={`/user/${id}/homes/new`}/>
-        // } else {
+        const id = this.props.match.params.userId
+        if (this.state.redirect) {
+            return <Redirect to={`/user/${id}/homes`}/>
+        } else {
         return (
             <form onSubmit={this.addNewHome}>
             <div>
@@ -87,6 +86,7 @@ class NewHome extends Component {
             </form>
         )
     }
+}
 }
 
 export default NewHome
