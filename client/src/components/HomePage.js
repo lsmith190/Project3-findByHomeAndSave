@@ -1,22 +1,23 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import { Redirect} from "react-router-dom";
 
 
 class HomePage extends Component {
     state = {
-        user: []
+        user: {}
     }
 
-    componentDidMount() {
-        this.users()
-    }
+    // componentDidMount() {
+    //     this.users()
+    // }
 
-    users = () => {
-        axios.get('/api/user').then(res => {
-            this.setState({user: res.data})
-        })
-    }
+    // users = () => {
+    //     axios.get('/api/user').then(res => {
+    //         this.setState({user: res.data})
+    //     })
+    // }
 
     newUser = () => {
         const payload = this.state.newHome
@@ -26,9 +27,13 @@ class HomePage extends Component {
     }
     
     render() {
-        const user = this.state.user.map((user) => {
-            return user._id
-        })
+        // const user = this.state.user.map((user) => {
+        //     return user._id
+        // })
+        const id = this.state.user._id
+        if (this.state.redirect) {
+            return <Redirect to={`/user/${id}/homes`}/>
+        } else {
         return (
             <div style= {{textAlign: "center", padding: "50px"}}>
                 <h1 style={{textAlign: "center"}}>Login</h1>
@@ -50,14 +55,18 @@ class HomePage extends Component {
                             name="password"
                             onChange={this.handleChange}
                         />
+                       
                     </div>
-                    <Link to={`user/${user}/homes`}>Login</Link>
+                    {/* <Link to={this.state.user._id}>Login</Link> */}
+                    <input type="submit" value="Login"/>
                 </form>
+
 
             </div>
 
         )
     }
+}
 }
 
 export default HomePage
