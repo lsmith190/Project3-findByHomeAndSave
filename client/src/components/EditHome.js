@@ -49,7 +49,6 @@ class editHome extends Component {
     editHome = (evt) => {
     evt.preventDefault();
     const payload = this.state.editHome
-    console.log(payload)
     const id = this.props.match.params.userId
     const homeId = this.props.match.params.homeId
     axios

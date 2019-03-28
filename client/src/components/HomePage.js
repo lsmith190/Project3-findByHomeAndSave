@@ -29,6 +29,7 @@ class HomePage extends Component {
 
         return (
             <LoginPg>
+
             <div>
                 <h1>findByHomeAndSave</h1>
                 <div><Link to={`/new`}>+ Create account</Link></div>

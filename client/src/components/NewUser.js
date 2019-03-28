@@ -17,7 +17,6 @@ class NewUser extends Component {
         const attributeValue = event.target.value;
         const user = { ...this.state.user };
         user[attributeName] = attributeValue;
-        console.log(user)
         this.setState({ user })
     };
 
@@ -30,7 +29,6 @@ class NewUser extends Component {
     }
 
     render() {
-        // const id = this.state.user._id
         if (this.state.redirect) {
             return <Redirect to={"/"} />
         } else {

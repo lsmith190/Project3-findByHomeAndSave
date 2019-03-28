@@ -16,7 +16,6 @@ class Home extends Component {
         const id = this.props.userId;
         axios.get(`/api/user/${id}/homes`)
         .then((res) => {
-            console.log(res.data)
             this.setState({home: res.data})
         })
     }
@@ -27,9 +26,7 @@ class Home extends Component {
         axios.delete(`/api/user/${id}/homes/${homeId}`)
         .then(res => {
             const copiedHome = [...this.state.home]
-            console.log(copiedHome)
             const filteredHomes = copiedHome.filter(home => home._id !== res.data._id)
-            console.log(filteredHomes)
             this.setState({ home: filteredHomes})
         }).then(() => {
             this.getHomes()
