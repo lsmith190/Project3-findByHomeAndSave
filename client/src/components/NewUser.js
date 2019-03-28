@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import { LoginPg } from '../styles/Login.js'
 
 class NewUser extends Component {
@@ -25,21 +25,21 @@ class NewUser extends Component {
         const payload = this.state.user
         axios.post('/api/user', { name: this.state.user.name, password: this.state.user.password })
             .then(res => {
-                this.setState({ "redirect": true })
+                this.setState({ redirect: true })
             })
     }
 
     render() {
-        const id = this.state.user._id
+        // const id = this.state.user._id
         if (this.state.redirect) {
-            return <Redirect to="/" />
+            return <Redirect to={"/"} />
         } else {
             return (
                 <LoginPg>
                     <div style={{ textAlign: "center", padding: "50px" }}>
                         <h1 style={{ textAlign: "center" }}>findByHomeAndSave</h1>
 
-                        <form onSubmit={this.newUser}>
+                        <form>
                             <div>
                                 <label htmlFor="name">Name: </label>
                                 <input
@@ -57,7 +57,7 @@ class NewUser extends Component {
                                 />
 
                             </div>
-                            <input type="submit" value="Login" />
+                            <Link to={`/`}><input type="submit" value="Login" onClick={this.newUser}/></Link>
                         </form>
 
 

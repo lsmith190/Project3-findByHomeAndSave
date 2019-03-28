@@ -51,8 +51,9 @@ class AllHomes extends Component {
 
 
                 <AddHome>
-                <h2><a className="btn btn-light" href={`/user/${id}/homes/new`}>+ Add Home</a></h2>
-                <div><Link to={`/`} onClick={this.deleteUser}>+ Delete Account</Link></div>
+                <div><Link to={`/user/${id}/homes/new`}>+ Add Home</Link></div>
+                <div><Link to='/' onClick={this.deleteUser}>+ Delete Account</Link></div>
+                <div><Link to='/'>+ Back to home</Link></div>
                 </AddHome>
             
             </div>
