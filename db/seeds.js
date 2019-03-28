@@ -35,7 +35,5 @@ lindsey.homes.push(hillSt)
 
 User.remove({})
     .then(() => lindsey.save())
-    // .then(() => mercerSt.save())
-    // .then(() => hillSt.save())
     .then(() => console.log('Successful Save'))
     .then(() => mongoose.connection.close())

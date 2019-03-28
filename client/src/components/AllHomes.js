@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import Home from './Home.js'
 import styled from 'styled-components'
+import { Link } from "react-router-dom";
 
 const AddHome = styled.h2`
     display: flex;
@@ -27,6 +28,13 @@ class AllHomes extends Component {
         })
       }
 
+      deleteUser = () => {
+        const id = this.props.match.params.userId;
+        axios.delete(`/api/user/${id}`).then(() => {
+          this.props.history.goBack();
+        });
+      };
+
     render() {
         const id = this.props.match.params.userId
         return (
@@ -41,8 +49,10 @@ class AllHomes extends Component {
                     )
                 })}</h1>
 
+
                 <AddHome>
                 <h2><a className="btn btn-light" href={`/user/${id}/homes/new`}>+ Add Home</a></h2>
+                <div><Link to={`/`} onClick={this.deleteUser}>+ Delete Account</Link></div>
                 </AddHome>
             
             </div>

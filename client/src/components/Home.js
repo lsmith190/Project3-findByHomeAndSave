@@ -8,20 +8,6 @@ class Home extends Component {
         home: []
     }
 
-    // componentDidMount() {
-    //     this.getHomes()
-    // }
-
-//     componentDidUpdate(prevProps, prevState) {
-//         console.log(prevProps.home)
-//         console.log(this.props.home)
-//         if (prevState.home !== this.props.home) 
-//         // {
-//         //     this.getHomes()
-//         // }
-//         console.log('something')
-// }
-
     getHomes = () => {
         const id = this.props.userId;
         axios.get(`/api/user/${id}/homes`)
@@ -40,9 +26,6 @@ class Home extends Component {
             const filteredHomes = copiedHome.filter(home => home._id !== res.data._id)
             console.log(filteredHomes)
             this.setState({ home: filteredHomes, redirectToHome: true })
-        // this.setState({
-        //   home: res.data
-        // });
         })
       }
 
@@ -51,7 +34,7 @@ class Home extends Component {
         return (
 
             <div>
-                <h6 style={{textAlign:"center"}}>
+                <h6 style={{textAlign:"center", width:350}}>
                 <div><Link to={`/user/${id}/homes/${this.props.home._id}/edit`}>+ Edit Home</Link></div>
                 <div><Link to={`/user/${id}/homes`} onClick={this.deleteHome}>+ Delete Home</Link></div>
                 <div><img src={this.props.home.image} height="200" width="200" alt="home"/></div>

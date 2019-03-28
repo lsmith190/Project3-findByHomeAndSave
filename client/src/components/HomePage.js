@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import User from './User'
 // import styled from 'styled-components'
+import {LoginPg} from '../styles/Login.js'
+import { Link } from "react-router-dom";
 
 
 class HomePage extends Component {
@@ -26,9 +28,13 @@ class HomePage extends Component {
        })
 
         return (
+            <LoginPg>
             <div>
+                <h1>findByHomeAndSave</h1>
+                <div><Link to={`/new`}>+ Create account</Link></div>
                 {user}
             </div>
+            </LoginPg>
 
         )
     }

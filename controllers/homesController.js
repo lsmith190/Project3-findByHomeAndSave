@@ -1,6 +1,5 @@
 const express = require('express')
 const Homes = require('../models/Homes.js')
-    // const router = express.Router()
 const router = express.Router({ mergeParams: true });
 const User = require('../models/User.js')
 
@@ -32,9 +31,7 @@ router.get('/:homeId', (req, res) => {
 
     User.findById(userId)
         .then((user) => {
-            console.log(user)
             const foundHome = user.homes.find((home) => {
-                console.log(home)
                 return home.id === homeId;
             })
             res.json(foundHome)

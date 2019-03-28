@@ -17,6 +17,13 @@ router.post('/', (req, res) => {
     })
 })
 
+router.delete("/:id", (req, res) => {
+    User.findByIdAndRemove(req.params.id).then(user => {
+        user.save();
+        res.json("200 status");
+    });
+});
+
 
 //Show
 router.get("/:id", (req, res) => {
@@ -24,6 +31,7 @@ router.get("/:id", (req, res) => {
         res.json(user);
     });
 });
+
 
 
 module.exports = router;

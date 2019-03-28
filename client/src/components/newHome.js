@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Redirect} from "react-router-dom";
+import styled from 'styled-components'
+
+const NewForm = styled.div`
+    width: 300px;
+    margin: 0 auto;
+`;
 
 class NewHome extends Component {
     state = {
@@ -41,6 +47,7 @@ class NewHome extends Component {
             return <Redirect to={`/user/${id}/homes`}/>
         } else {
         return (
+            <NewForm>
             <form onSubmit={this.addNewHome}>
             <div>
                     <label htmlFor="address">Address: </label>
@@ -84,6 +91,7 @@ class NewHome extends Component {
             </div>
             <input type="submit" value="Submit" />
             </form>
+            </NewForm>
         )
     }
 }
