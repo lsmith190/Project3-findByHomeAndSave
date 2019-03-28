@@ -5,7 +5,7 @@ findByHomeAndSave is a MERN stack application that allows users to keep track of
 
 ## Project Links
 <ul>
-<li>Deployed Heroku Application: </li>
+<li>Deployed Heroku Application: https://findbyhomeandsave.herokuapp.com/</li>
 <li>Trello Board: https://trello.com/b/2wFdwU7r/project-3-findbyhomeandsave</li>
 </ul>
 
