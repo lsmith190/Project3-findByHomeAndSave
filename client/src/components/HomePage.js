@@ -17,17 +17,24 @@ class HomePage extends Component {
             this.setState({user: res.data})
         })
     }
+
+    newUser = () => {
+        const payload = this.state.newHome
+        axios.post('/api/user', payload).then(res => {
+            this.setState({user: res.data})
+        })
+    }
     
     render() {
         const user = this.state.user.map((user) => {
             return user._id
         })
         return (
-            <div>
-                <h1>Login</h1>
-                <Link to={`user/${user}/homes`} key={user._id}>{user}</Link>
+            <div style= {{textAlign: "center", padding: "50px"}}>
+                <h1 style={{textAlign: "center"}}>Login</h1>
+                {/* <Link to={`user/${user}/homes`} key={user._id}>{user}</Link> */}
 
-                <form>
+                <form onSubmit={this.newUser}> 
                     <div>
                     <label htmlFor="name">Name: </label>
                         <input

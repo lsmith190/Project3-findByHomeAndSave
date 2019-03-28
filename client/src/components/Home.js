@@ -51,7 +51,7 @@ class Home extends Component {
         return (
 
             <div>
-                <h6>
+                <h6 style={{textAlign:"center"}}>
                 <div><Link to={`/user/${id}/homes/${this.props.home._id}/edit`}>+ Edit Home</Link></div>
                 <div><Link to={`/user/${id}/homes`} onClick={this.deleteHome}>+ Delete Home</Link></div>
                 <div><img src={this.props.home.image} height="200" width="200" alt="home"/></div>

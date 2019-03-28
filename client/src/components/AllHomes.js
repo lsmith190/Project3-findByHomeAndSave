@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import Home from './Home.js'
+import styled from 'styled-components'
+
+const AddHome = styled.h2`
+    display: flex;
+    justify-content: center;
+`;
 
 class AllHomes extends Component {
     state = {
@@ -35,9 +41,9 @@ class AllHomes extends Component {
                     )
                 })}</h1>
 
-                
+                <AddHome>
                 <h2><a className="btn btn-light" href={`/user/${id}/homes/new`}>+ Add Home</a></h2>
-                
+                </AddHome>
             
             </div>
         );
