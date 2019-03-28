@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 // import { Link } from 'react-router-dom'
 import { Redirect} from "react-router-dom";
+// import styled from 'styled-components'
+import {LoginPg} from '../styles/Login.js'
 
 
 class HomePage extends Component {
@@ -35,8 +37,9 @@ class HomePage extends Component {
             return <Redirect to={`/user/${id}/homes`}/>
         } else {
         return (
+            <LoginPg>
             <div style= {{textAlign: "center", padding: "50px"}}>
-                <h1 style={{textAlign: "center"}}>Login</h1>
+                <h1 style={{textAlign: "center"}}>findByHomeAndSave</h1>
                 {/* <Link to={`user/${user}/homes`} key={user._id}>{user}</Link> */}
 
                 <form onSubmit={this.newUser}> 
@@ -63,6 +66,7 @@ class HomePage extends Component {
 
 
             </div>
+            </LoginPg>
 
         )
     }
