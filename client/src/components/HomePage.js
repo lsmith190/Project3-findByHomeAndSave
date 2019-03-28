@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Redirect} from "react-router-dom";
-// import styled from 'styled-components'
-import {LoginPg} from '../styles/Login.js'
+
+import styled from 'styled-components'
 
 
 class HomePage extends Component {
